@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<section class="form-container">
+    <h2>Create Your Writely Account</h2>
+
+    <form action="/register" method="POST" class="form">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" required placeholder="Enter your name">
+        
+        <label for="username">Username</label>
+        <input type="text" name="username" required placeholder="Enter your username">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required placeholder="Enter email eg. abc@xyz.com">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required placeholder="Create a password">
+
+        <button type="submit" class="btn primary-btn">Register</button>
+    </form>
+
+    <div class="separator">OR</div>
+
+    <a href="/auth/google" class="btn google-btn">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" class="google-icon">
+        Sign up with Google
+    </a>
+
+</section>
+
+<%- include('partials/footer') %>

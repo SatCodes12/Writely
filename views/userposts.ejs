@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<div class="container">
+    <div class="post-header">
+        <h2>My Posts</h2>
+        <a href="/newpost" class="new-post-button">+ New Post</a>
+    </div>
+
+    <% if (posts.length === 0) { %>
+        <p class="no-posts">You haven't posted anything. Click on New Posts to start a conversation</p>
+    <% } else { %>
+        <div class="post-list">
+            <% posts.forEach(function(post) { %>
+                <div class="post-card">
+                    <h3><%= post.title %></h3>
+                    <p><%= post.content %></p>
+                    
+                    <div class="post-actions">
+                        <a href="/editpost/<%= post.id %>" class="edit-btn">Edit</a>
+                        <a href="/deletepost/<%= post.id %>" class="delete-btn" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
+
+<script>
+    document.getElementById("Posts").classList.add("active");
+</script>
+
+<%- include('partials/footer') %>

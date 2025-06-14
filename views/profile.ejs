@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<div class="profile-container">
+    <h1>My Profile</h1>
+    <div class="profile-card">
+        <p><strong>Name:</strong> <%= name %></p>
+        <p><strong>Username:</strong> <%= username %></p>
+        <p><strong>Email:</strong> <%= email %></p>
+        <p><strong>Total Posts:</strong> <%= totalPosts %></p>
+    </div>
+    <div class="logout-wrapper">
+        <a href="/logout" class="btn logout-btn">Log Out</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("Profile").classList.add("active");
+</script>
+
+<%- include('partials/footer') %>

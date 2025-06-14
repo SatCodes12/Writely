@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navbar') %>
+
+<div class="container">
+    <div class="post-header">
+        <h2><%=authorName%>'s Posts</h2>
+    </div>
+
+    <% if (posts.length === 0) { %>
+        <p class="no-posts">This author hasn't posted anything.</p>
+    <% } else { %>
+        <div class="post-list">
+            <% posts.forEach(function(post) { %>
+                <div class="post-card">
+                    <h3><%= post.title %></h3>
+                    <p><%= post.content %></p>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+</div>
+
+<%- include('partials/footer') %>
