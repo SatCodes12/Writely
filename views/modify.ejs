@@ -17,7 +17,7 @@
                 <textarea id="content" name="content" rows="10" required><%= post.content %></textarea>
             </div>
 
-            <button type="submit" class="submit-btn"><%= submit %></button>
+            <button type="submit" class="submit-btn" onclick="return confirm('Do you want to save changes?')"><%= submit %></button>
         </form>
     <% } else { %>
         <form class="post-form" method="post" action="/post">
@@ -31,7 +31,7 @@
                 <textarea id="content" name="content" rows="6" required></textarea>
             </div>
 
-            <button type="submit" class="submit-btn"><%= submit %></button>
+            <button type="submit" class="submit-btn" onclick="return confirm('Do you want to submit this post?')"><%= submit %></button>
         </form>
     <% } %>
 </div>
